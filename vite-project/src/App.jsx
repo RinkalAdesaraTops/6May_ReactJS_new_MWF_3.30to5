@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 // import './App.css'
 import styled from 'styled-components'
 import Accordion from 'react-bootstrap/Accordion';
+import MaterialComponent from './MaterialComponent';
+import UserComponent from './UserComponent';
 
 function App() {
   let a=10
@@ -15,7 +17,10 @@ function App() {
   }
   return (
     <>
-      <h3 style={mycolor}>My react Component </h3>
+    <div>
+      <UserComponent />
+    </div>
+      {/* <h3 style={mycolor}>My react Component </h3>
       <H4>A is == {a}</H4>
       <h4 className='abc'>Pi is == {pi}</h4>
 
@@ -45,6 +50,7 @@ function App() {
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
+    <MaterialComponent /> */}
     </>
     
   )
