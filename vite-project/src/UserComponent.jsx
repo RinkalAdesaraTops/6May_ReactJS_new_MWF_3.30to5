@@ -6,6 +6,7 @@ const UserComponent = () => {
     const [id,setId]=useState("")
     const [age,setAge]=useState("")
     const [salary,setSalary]=useState("")
+    
     const [data,setData] = useState([])
     const saveData = (e)=>{
         e.preventDefault();

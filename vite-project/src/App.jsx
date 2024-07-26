@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import Accordion from 'react-bootstrap/Accordion';
 import MaterialComponent from './MaterialComponent';
 import UserComponent from './UserComponent';
+import UserCRUDComponent from './UserCRUDComponent';
 
 function App() {
   let a=10
@@ -18,7 +19,8 @@ function App() {
   return (
     <>
     <div>
-      <UserComponent />
+      {/* <UserComponent /> */}
+      <UserCRUDComponent />
     </div>
       {/* <h3 style={mycolor}>My react Component </h3>
       <H4>A is == {a}</H4>
