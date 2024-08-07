@@ -7,6 +7,14 @@ import Accordion from 'react-bootstrap/Accordion';
 import MaterialComponent from './MaterialComponent';
 import UserComponent from './UserComponent';
 import UserCRUDComponent from './UserCRUDComponent';
+import Menu from './Menu';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import Login from './Login';
+import Register from './Register';
+import Contact from './Contact';
+import Menu1 from './Menu1';
+import UseRefExample from './UseRefExample';
 
 function App() {
   let a=10
@@ -19,40 +27,18 @@ function App() {
   return (
     <>
     <div>
-      {/* <UserComponent /> */}
-      <UserCRUDComponent />
+    <BrowserRouter>
+      <Menu1 />
+      <Routes>
+          <Route path='/register' element={<Register />}/>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/home' element={<Home />}/>
+          <Route path='/useRef' element={<UseRefExample />}/>
+      </Routes>
+    </BrowserRouter>  
+     
     </div>
-      {/* <h3 style={mycolor}>My react Component </h3>
-      <H4>A is == {a}</H4>
-      <h4 className='abc'>Pi is == {pi}</h4>
-
-      <Accordion defaultActiveKey="0">
-      <Accordion.Item eventKey="0">
-        <Accordion.Header>Accordion Item #1</Accordion.Header>
-        <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="1">
-        <Accordion.Header>Accordion Item #2</Accordion.Header>
-        <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
-    <MaterialComponent /> */}
+     
     </>
     
   )
