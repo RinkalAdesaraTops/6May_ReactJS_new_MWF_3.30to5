@@ -8,6 +8,7 @@ const Menu1 = () => {
         <li><a href="/login">Login</a></li>
         <li><a href="/home">Home</a></li>
         <li><a href="/useRef">UseRef</a></li>
+        <li><a href="/usememo">UseMemo</a></li>
       </ul>
     </div>
   )

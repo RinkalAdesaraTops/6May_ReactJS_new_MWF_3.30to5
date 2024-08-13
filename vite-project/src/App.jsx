@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 // import './App.css'
@@ -9,12 +9,15 @@ import UserComponent from './UserComponent';
 import UserCRUDComponent from './UserCRUDComponent';
 import Menu from './Menu';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './Home';
 import Login from './Login';
 import Register from './Register';
-import Contact from './Contact';
+const Home = lazy(()=>import('./Home'))
+const Contact = lazy(()=>import('./Contact'))
+// import Home from './Home';
+// import Contact from './Contact';
 import Menu1 from './Menu1';
 import UseRefExample from './UseRefExample';
+import UseMemoexample from './UseMemoexample';
 
 function App() {
   let a=10
@@ -27,16 +30,24 @@ function App() {
   return (
     <>
     <div>
-    <BrowserRouter>
+    <Suspense fallback={<div>Contact loading.....</div>}>
+          <Contact />
+    </Suspense>
+    <Suspense fallback={<div>Plz wait...</div>}>
+      <Home />
+    </Suspense>
+     
+    {/* <BrowserRouter>
       <Menu1 />
       <Routes>
           <Route path='/register' element={<Register />}/>
           <Route path='/login' element={<Login />}/>
           <Route path='/home' element={<Home />}/>
           <Route path='/useRef' element={<UseRefExample />}/>
+          <Route path='/usememo' element={<UseMemoexample />}/>
       </Routes>
     </BrowserRouter>  
-     
+      */}
     </div>
      
     </>
